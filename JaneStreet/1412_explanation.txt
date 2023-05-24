@@ -1,0 +1,11 @@
+Generate a finite, but an arbitrarily large binary tree quickly in O(1).
+
+That is, generate() should return a tree whose size is unbounded but finite.
+
+Solution explanation:
+
+In this code, each Node lazily generates its left and right children when the left and right properties are accessed. This happens in the @property decorators for left and right, where a new node is only created if the corresponding child (_left or _right) is None.
+
+The generate function simply returns a new Node, and you can interact with this node as if it were the root of an arbitrarily large binary tree.
+
+Remember though, while this does create a structure that can behave as if it's an arbitrarily large binary tree, it's not actually creating the entire binary tree at once in O(1) time. It's just that the parts of the tree are being created lazily, as and when they are needed.
