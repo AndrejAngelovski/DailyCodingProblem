@@ -1,0 +1,19 @@
+Task:
+Given two non-empty binary trees s and t, check whether tree t has exactly the 
+same structure and node values with a subtree of s. A subtree of s is a tree consists 
+of a node in s and all of this node's descendants. The tree s could also be considered
+as a subtree of itself.
+
+Solution explained:
+isSubtree is the main function which accepts the two tree roots s and t as parameters. 
+It first checks if s is None, and if so, returns False since a None tree cannot contain a non-empty tree t.
+ If s is not None, it checks whether the trees rooted at s and t are the same using the helper function isSame.
+   If they are, it returns True. If they aren't, it recursively checks whether t is a subtree of the left or right subtree of s.
+
+isSame is a helper function which checks if two trees are identical. If both trees are None, they are trivially identical,
+ so it returns True. If exactly one of the trees is None, they cannot be identical, so it returns False. 
+ If neither of the trees is None, it checks if the values of the nodes are equal and if the left subtree of s is identical to 
+ the left subtree of t and the right subtree of s is identical to the right subtree of t.
+
+This solution works in O(m*n) time, where m and n are the numbers of nodes in trees s and t respectively, 
+because in the worst case it needs to compare each node in s with each node in t.
