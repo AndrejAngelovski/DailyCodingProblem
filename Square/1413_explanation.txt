@@ -1,0 +1,21 @@
+Given a string and a set of characters, return the shortest substring containing all the characters in the set.
+
+For example, given the string "figehaeci" and the set of characters {a, e, i}, you should return "aeci".
+
+If there is no substring containing all the characters in the set, return null.
+
+
+Solution explanation:
+
+This problem can be solved using a two-pointer approach, where we move the right pointer to scan through the string and find a valid substring, then move the left pointer to try to reduce the size of the valid substring. The valid substring is defined as a substring that contains all the characters in the set.
+We first create a dictionary char_count to store the count of each character in the set and initialize a counter formed to keep track of how many unique characters in the set have been encountered in the string.
+
+We keep expanding the right boundary of the substring by moving the right pointer and updating char_count and formed accordingly.
+
+When formed equals required, it means we have found a valid substring. We then try to minimize this substring by advancing the left pointer while maintaining the validity of the substring.
+
+Every time we move the left pointer, we check if the new substring's length is less than the minimum length found so far. If it is, we update the minimum length and store the current substring as the result.
+
+This process continues until the right pointer reaches the end of the string.
+
+At the end, we return the shortest valid substring. If no such substring exists, we return 'null'.
