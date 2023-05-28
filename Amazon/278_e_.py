@@ -1,4 +1,5 @@
 # Given an integer N, construct all possible binary search trees with N nodes.
+from tqdm import tqdm
 
 class Node:
     def __init__(self, item):
@@ -12,8 +13,9 @@ def construct_trees(start, end):
     if start > end:
         trees.append(None)
         return trees
-    
-    for i in range(start, end+1):
+
+    # wrap the outermost loop with tqdm
+    for i in tqdm(range(start, end+1)):
         left_subtree = construct_trees(start, i-1)
         right_subtree = construct_trees(i+1, end)
 
