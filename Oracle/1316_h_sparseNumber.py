@@ -14,3 +14,4 @@ def nextSparse(x):
 
     # Start from second bit (next to LSB)
     # for i in range (1, n):
+# ----------------- FINISH
