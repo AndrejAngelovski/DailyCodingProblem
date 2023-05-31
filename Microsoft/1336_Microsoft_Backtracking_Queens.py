@@ -36,7 +36,7 @@ def n_queens(n):
                 return False
         # Check if there is a queen in the same diagonal (upper left to lower right)
         for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
-            if board[i][j] = 1:
+            if board[i][j] == 1:
                 return False
         # Check if there is a queen in the same diagonal (lower left to upper right)
         for i, j in zip(range(row, n), range(col, -1, -1)):
